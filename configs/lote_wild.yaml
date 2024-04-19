@@ -1,0 +1,25 @@
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: LoTE/LoTE_Wild  # dataset root dir
+train: images/train  # train images (relative to 'path') 4 images
+val: images/val  
+test: images/test 
+
+# Keypoints
+kpt_shape: [17, 3]  # number of keypoints, number of dims (2 for x,y or 3 for x,y,visible)
+flip_idx: [1, 0, 2, 3, 4, 8, 9, 10, 5, 6, 7, 14, 15, 16, 11, 12, 13]
+
+# Classes
+names:
+ 0: Pandas
+ 1: RedPandas
+ 2: MartesFlavigula
+ 3: MacacaThibetana
+ 4: RhinopithecusRoxellana
+ 5: HystrixBrachyura
+ 6: SusScrofa
+ 7: RusaUnicolor
+ 8: ElaphodusCephalophus
+ 9: CapricornisMilneedwardsii
+ 10: PseudoisNayaur
+# Download script/URL (optional)
+# download: https://ultralytics.com/assets/coco8-pose.zip

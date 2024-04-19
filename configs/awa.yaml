@@ -1,0 +1,50 @@
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path:  awa  # dataset root dir
+train: images/train  # train images (relative to 'path') 4 images
+val: images/val  # val images (relative to 'path') 4 images
+test: images/test # test images (optional)
+
+# Keypoints
+kpt_shape: [39, 3]  # number of keypoints, number of dims (2 for x,y or 3 for x,y,visible)
+flip_idx: [0, 1, 2, 4, 3, 10, 11, 12, 13, 14, 5, 6, 7, 8, 9,
+           16, 17, 18, 19, 20, 21, 22, 23, 25, 24, 28, 29, 26, 27,
+           33, 34, 35, 30, 31, 32, 36, 38, 37]
+
+# Classes
+names:
+  0 : antelope
+  1 : bobcat
+  2 : buffalo
+  3 : chihuahua
+  4 : collie
+  5 : cow
+  6 : dalmatian
+  7 : deer
+  8 : elephant
+  9 : fox
+  10 : german+shepherd
+  11 : giant+panda
+  12 : giraffe
+  13 : grizzly+bear
+  14 : hippopotamus
+  15 : horse
+  16 : leopard
+  17 : lion
+  18 : moose
+  19 : otter
+  20 : ox
+  21 : persian+cat
+  22 : pig
+  23 : polar+bear
+  24 : rabbit
+  25 : raccoon
+  26 : rat
+  27 : rhinoceros
+  28 : sheep
+  29 : siamese+cat
+  30 : skunk
+  31 : squirrel
+  32 : tiger
+  33 : weasel
+  34 : wolf
+  35 : zebra
