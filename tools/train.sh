@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define datasets and model directories
-datasets=("fish")  # Add more dataset names here
+datasets=("aniposefly")  # Add more dataset names here
 models=("yolov8n-pose.yaml" "yolov8s-pose.yaml" "yolov8m-pose.yaml" "yolov8l-pose.yaml" "yolov8x-pose.yaml" "yolov8x-pose-p6.yaml")
 
 # Train settings
@@ -23,9 +23,9 @@ for dataset in "${datasets[@]}"; do
 
         # Launch YOLO pose training command in background
         yolo pose train \
-            data=./config/data/$dataset.yaml \
-            model=./config/models/$dataset/$model \
-            pretrained=./config/models/$dataset/$pretrained \
+            data=./configs/data/$dataset.yaml \
+            model=./configs/models/$dataset/$model \
+            pretrained=$pretrained \
             epochs=$EPOCHS \
             imgsz=$IMGSZ \
             batch=$BATCH \
