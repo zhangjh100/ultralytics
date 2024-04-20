@@ -16,7 +16,7 @@ RESUME=False
 for dataset in "${datasets[@]}"; do
     for model in "${models[@]}"; do
         # Derive the pre-trained model filename
-        pretrained="${model%.yaml}-pose.pt"
+        pretrained="${model%.yaml}.pt"
         # Construct the training run name
         name="${dataset}-${model%.yaml}"
         project="./runs/pose/$dataset"
