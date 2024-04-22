@@ -11,6 +11,3 @@ flip_idx: [3, 4, 5, 0, 1, 2]
 # Classes
 names:
   0: mouse
-
-# Download script/URL (optional)
-# download: https://ultralytics.com/assets/coco8-pose.zip
