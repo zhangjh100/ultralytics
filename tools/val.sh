@@ -3,7 +3,7 @@
 # Script: Train YOLOv8 models on a specified dataset with default or user-provided settings.
 # Usage: bash tools/val.sh \ 
 # --dataset <datase_name> \
-# --img-size <image_size> \
+# --imgsz <image_size> \
 # --batch <batch_size> \
 # --save-json \
 # --save-hybrid \    # save model in ONNX and TorchScript formats
@@ -35,7 +35,7 @@ split=test
 
 # Ensure a dataset name is provided
 if [ "$#" -lt 1 ]; then
-    echo "Usage: $0 [--dataset <datase_name> --img-size <image_size> --batch <batch_size> --save-json --save-hybrid --conf <conf_thresh> --iou <iou_thresh> --max-det <max_detections> --half --device <device> --dnn --plots --rect --split <split_name>]"
+    echo "Usage: $0 [--dataset <datase_name> --imgsz <image_size> --batch <batch_size> --save-json --save-hybrid --conf <conf_thresh> --iou <iou_thresh> --max-det <max_detections> --half --device <device> --dnn --plots --rect --split <split_name>]"
     exit 1
 fi
 
@@ -47,7 +47,7 @@ while [[ $# -gt 1 ]]; do
             dataset="$2"
             shift # past argument
             ;;
-        --img-size)
+        --imgsz)
             imgsz="$2"
             shift # past argument
             ;;
@@ -103,7 +103,6 @@ done
 
 # Predefined models
 models=("yolov8n-pose.yaml" "yolov8s-pose.yaml" "yolov8m-pose.yaml" "yolov8l-pose.yaml" "yolov8x-pose.yaml")
-# models=("yolov8n-pose.yaml" "yolov8s-pose.yaml" "yolov8m-pose.yaml" "yolov8l-pose.yaml" "yolov8x-pose.yaml" "yolov8x-pose-p6.yaml")
 # Loop through each model for the given dataset
 for model_yaml in "${models[@]}"; do
     
