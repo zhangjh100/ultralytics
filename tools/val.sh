@@ -35,7 +35,7 @@ split=test
 
 # Ensure a dataset name is provided
 if [ "$#" -lt 1 ]; then
-    echo "Usage: $0 [--dataset <datase_name> --imgsz <image_size> --batch <batch_size> --save-json --save-hybrid --conf <conf_thresh> --iou <iou_thresh> --max-det <max_detections> --half --device <device> --dnn --plots --rect --split <split_name>]"
+    echo "Usage: $0 [--dataset <datase_name> --imgsz <image_size> --batch <batch_size> --save_json --save_hybrid --conf <conf_thresh> --iou <iou_thresh> --max_det <max_detections> --half --device <device> --dnn --plots --rect --split <split_name>]"
     exit 1
 fi
 
@@ -55,10 +55,10 @@ while [[ $# -gt 1 ]]; do
             batch="$2"
             shift # past argument
             ;;
-        --save-json)
+        --save_json)
             save_json=True
             ;;
-        --save-hybrid)
+        --save_hybrid)
             save_hybrid=True
             ;;
         --conf)
@@ -69,7 +69,7 @@ while [[ $# -gt 1 ]]; do
             iou="$2"
             shift # past argument
             ;;
-        --max-det)
+        --max_det)
             max_det="$2"
             shift # past argument
             ;;
@@ -106,8 +106,8 @@ models=("yolov8n-pose.yaml" "yolov8s-pose.yaml" "yolov8m-pose.yaml" "yolov8l-pos
 # Loop through each model for the given dataset
 for model_yaml in "${models[@]}"; do
     
-    model_name="${default_dataset}-${model_yaml%.yaml}"
-    output_dir="./runs/pose/$default_dataset"
+    model_name="${dataset}-${model_yaml%.yaml}"
+    output_dir="./runs/pose/$dataset"
     model=$output_dir/weights/best.pt
 
     # Launch YOLOv8 pose evaluation command
