@@ -44,8 +44,8 @@ while [[ $# -gt 1 ]]; do
             shift
             ;;
         --models)
-            IFS=',' read -ra selected_models <<< "$2"
             shift
+            IFS=',' read -ra selected_models <<< "$2"
             ;;
         *)  # unknown option
             echo "Unknown option: $1"
@@ -107,16 +107,16 @@ for model_yaml in "${models[@]}"; do
 
     # Launch YOLOv8 pose training command
     echo "Training $model_yaml on $dataset..."
-    yolo pose train \
-        data=./configs/data/"$dataset".yaml \
-        model=./configs/models/"$dataset"/"$model_yaml" \
-        pretrained=$pretrained_model \
-        epochs=$epochs \
-        imgsz=$imgsz \
-        batch=$batch_size \
-        project=$output_dir \
-        name=$model_name \
-        device=$device \
-        cos_lr=$cos_lr \
-        resume=$resume
+    # yolo pose train \
+    #     data=./configs/data/"$dataset".yaml \
+    #     model=./configs/models/"$dataset"/"$model_yaml" \
+    #     pretrained=$pretrained_model \
+    #     epochs=$epochs \
+    #     imgsz=$imgsz \
+    #     batch=$batch_size \
+    #     project=$output_dir \
+    #     name=$model_name \
+    #     device=$device \
+    #     cos_lr=$cos_lr \
+    #     resume=$resume
 done
