@@ -16,6 +16,7 @@
 # --plots \
 # --rect \
 # --split <split_name> \
+# --models <model_codes>
 
 dataset=ap10k
 imgsz=640
@@ -35,7 +36,7 @@ split=test
 
 # Ensure a dataset name is provided
 if [ "$#" -lt 1 ]; then
-    echo "Usage: $0 [--dataset <datase_name> --imgsz <image_size> --batch <batch_size> --save_json --save_hybrid --conf <conf_thresh> --iou <iou_thresh> --max_det <max_detections> --half --device <device> --dnn --plots --rect --split <split_name>]"
+    echo "Usage: $0 [--dataset <datase_name> --imgsz <image_size> --batch <batch_size> --save_json --save_hybrid --conf <conf_thresh> --iou <iou_thresh> --max_det <max_detections> --half --device <device> --dnn --plots --rect --split <split_name> --models <model_codes>]"
     exit 1
 fi
 
