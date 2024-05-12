@@ -44,8 +44,8 @@ while [[ $# -gt 1 ]]; do
             shift
             ;;
         --models)
-            shift
             IFS=',' read -ra selected_models <<< "$2"
+            shift
             ;;
         *)  # unknown option
             echo "Unknown option: $1"
