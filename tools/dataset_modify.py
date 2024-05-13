@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 """
 File Name: dataset_modify.py
 Author: wux024
@@ -11,7 +10,7 @@ Version: 1.0
 
 Overview:
     Provide a concise summary of the file's functionality, objectives, or primary logic implemented.
-    
+
 Notes:
     - Modifications should be documented in the "Revision History" section beneath this.
     - Ensure compliance with project coding standards.
@@ -66,13 +65,10 @@ Revision History:
 #         json.dump(data, file, indent=4)
 #         file.close()
 
-
-
-
 from ultralytics.data.converter import convert_coco
 
 convert_coco(
-    labels_dir='../datasets/aniposemouse/annotations',
+    labels_dir="../datasets/aniposemouse/annotations",
     save_dir="../datasets/aniposemouse/",
     use_segments=False,
     use_keypoints=True,
