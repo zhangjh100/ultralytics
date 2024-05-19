@@ -58,7 +58,7 @@ def build_docs(clone_repos=True):
 
     # Build the main documentation
     print(f"Building docs from {DOCS}")
-    subprocess.run(f"mkdocs build -f {DOCS.parent}/mkdocs.yml", check=True, shell=True)
+    subprocess.run(f"mkdocs build -f {DOCS.parent}/mkdocs.yml --strict", check=True, shell=True)
     print(f"Site built at {SITE}")
 
 
@@ -126,7 +126,7 @@ def main():
     # Update edit links
     update_subdir_edit_links(
         subdir="hub/sdk/",  # do not use leading slash
-        docs_url="https://github.com/ultralytics/hub-sdk/tree/develop/docs/",
+        docs_url="https://github.com/ultralytics/hub-sdk/tree/main/docs/",
     )
 
     # Update HTML file head section
