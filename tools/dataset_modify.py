@@ -26,7 +26,7 @@ Revision History:
 # import os
 # import json
 #
-# datasets = ['acinoset']
+# datasets = ['pups']
 #
 # for dataset in datasets:
 #     anns = ['train','val','test']
@@ -72,8 +72,8 @@ Revision History:
 from ultralytics.data.converter import convert_coco
 
 convert_coco(
-    labels_dir='../datasets/aniposemouse/annotations',
-    save_dir="../datasets/aniposemouse/",
+    labels_dir='../datasets/pups/annotations',
+    save_dir="../datasets/pups/",
     use_segments=False,
     use_keypoints=True,
     cls91to80=False,
