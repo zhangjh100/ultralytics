@@ -10,33 +10,33 @@ flip_idx: [1, 0, 2, 3, 4, 8, 9, 10, 5, 6, 7, 14, 15, 16, 11, 12, 13]
 
 # Classes
 names:
- 0: gorilla
- 1: spider-monkey
- 2: howling-monkey
- 3: zebra
- 4: elephant
- 5: hippo
- 6: raccon
- 7: rhino
- 8: giraffe
- 9: tiger
- 10: deer
- 11: lion
- 12: panda
- 13: cheetah
- 14: black-bear
- 15: polar-bear
- 16: antelope
- 17: fox
- 18: buffalo
- 19: cow
- 20: wolf
- 21: dog
- 22: sheep
- 23: cat
- 24: hourse
- 25: rabbit
- 26: pig
- 27: chimpanzee
- 28: monkey
- 29: orangutan
+ 0: deer
+ 1: dog
+ 2: cat
+ 3: horse
+ 4: rabbit
+ 5: pig
+ 6: chimpanzee
+ 7: monkey
+ 8: orangutan
+ 9: gorilla
+ 10: spider monkey
+ 11: noisy night monkey
+ 12: zebra
+ 13: elephant
+ 14: hippo
+ 15: raccoon
+ 16: rhino
+ 17: giraffe
+ 18: tiger
+ 19: lion
+ 20: panda
+ 21: cheetah
+ 22: black bear
+ 23: polar bear
+ 24: antelope
+ 25: fox
+ 26: buffalo
+ 27: cow
+ 28: wolf
+ 29: sheep
