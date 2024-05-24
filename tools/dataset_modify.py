@@ -19,63 +19,48 @@ Revision History:
     - [2024/5/13] wux024: Initial file creation
 """
 
-# from pycocotools.coco import COCO
-# import numpy as np
-# from PIL import Image
-# import os
-# import json
-#
-# datasets = ['pups']
-#
-# for dataset in datasets:
-#     anns = ['train','val','test']
-#     path = '../datasets/' + dataset + '/annotations/'
-#     for ann in anns:
-#         with open(path + ann + '.json') as f:
-#             data = json.load(f)
-#         print(data.keys())
-#         print(len(data['images']),len(data['annotations']))
-#         for num in range(0,len(data['annotations'])):
-#             # file_name = data['images'][num]['file_name']
-#             # data['images'][num]['file_name'] = os.path.basename(file_name)
-#             # width = data['images'][num]['width']
-#             # height = data['images'][num]['height']
-#             # full_img_path = '../datasets/' + dataset + '/images/' + ann + '/' + data['images'][num]['file_name']
-#             #
-#             # with Image.open(full_img_path) as img:
-#             #     w_res, h_res = img.size
-#             #     # modify images
-#             # data['images'][num]['width'] = w_res
-#             # data['images'][num]['height'] = h_res
-#
-#             # modify anns
-#             keypoints = data['annotations'][num]['keypoints']
-#             # data['annotations'][num * 3 + i]['id'] = num * 3 + i
-#             x = [keypoint for keypoint in keypoints[::3] if keypoint > 0.0]
-#             y = [keypoint for keypoint in keypoints[1::3] if keypoint > 0.0]
-#             xmin = min(x) if x else 0.0
-#             xmax = max(x) if x else 0.0
-#             ymin = min(y) if y else 0.0
-#             ymax = max(y) if y else 0.0
-#
-#             data['annotations'][num]['bbox'] = [xmin, ymin, xmax-xmin, ymax-ymin]
-#             data['annotations'][num]['area'] = (xmax - xmin) * (ymax - ymin)
-#
-#         file = open(path + ann + '.json',mode='w')
-#         json.dump(data, file, indent=4)
-#         file.close()
+from pycocotools.coco import COCO
+import numpy as np
+from PIL import Image
+import os
+import json
 
-from ultralytics.data.converter import convert_coco
+datasets = ['pups']
 
-convert_coco(
-<<<<<<< HEAD
-    labels_dir='../datasets/pups/annotations',
-    save_dir="../datasets/pups/",
-=======
-    labels_dir="../datasets/aniposemouse/annotations",
-    save_dir="../datasets/aniposemouse/",
->>>>>>> d9fe1aa08c28c3ea41176a42477f178d26e10648
-    use_segments=False,
-    use_keypoints=True,
-    cls91to80=False,
-)
+for dataset in datasets:
+    anns = ['train','val','test']
+    path = '../datasets/' + dataset + '/annotations/'
+    for ann in anns:
+        with open(path + ann + '.json') as f:
+            data = json.load(f)
+        print(data.keys())
+        print(len(data['images']),len(data['annotations']))
+        for num in range(0,len(data['annotations'])):
+            # file_name = data['images'][num]['file_name']
+            # data['images'][num]['file_name'] = os.path.basename(file_name)
+            # width = data['images'][num]['width']
+            # height = data['images'][num]['height']
+            # full_img_path = '../datasets/' + dataset + '/images/' + ann + '/' + data['images'][num]['file_name']
+            #
+            # with Image.open(full_img_path) as img:
+            #     w_res, h_res = img.size
+            #     # modify images
+            # data['images'][num]['width'] = w_res
+            # data['images'][num]['height'] = h_res
+
+            # modify anns
+            keypoints = data['annotations'][num]['keypoints']
+            # data['annotations'][num * 3 + i]['id'] = num * 3 + i
+            x = [keypoint for keypoint in keypoints[::3] if keypoint > 0.0]
+            y = [keypoint for keypoint in keypoints[1::3] if keypoint > 0.0]
+            xmin = min(x) if x else 0.0
+            xmax = max(x) if x else 0.0
+            ymin = min(y) if y else 0.0
+            ymax = max(y) if y else 0.0
+
+            data['annotations'][num]['bbox'] = [xmin, ymin, xmax-xmin, ymax-ymin]
+            data['annotations'][num]['area'] = (xmax - xmin) * (ymax - ymin)
+
+        file = open(path + ann + '.json',mode='w')
+        json.dump(data, file, indent=4)
+        file.close()
