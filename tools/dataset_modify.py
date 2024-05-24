@@ -19,23 +19,24 @@ Revision History:
     - [2024/5/13] wux024: Initial file creation
 """
 
-from pycocotools.coco import COCO
+import json
+import os
+
 import numpy as np
 from PIL import Image
-import os
-import json
+from pycocotools.coco import COCO
 
-datasets = ['pups']
+datasets = ["pups"]
 
 for dataset in datasets:
-    anns = ['train','val','test']
-    path = '../datasets/' + dataset + '/annotations/'
+    anns = ["train", "val", "test"]
+    path = "../datasets/" + dataset + "/annotations/"
     for ann in anns:
-        with open(path + ann + '.json') as f:
+        with open(path + ann + ".json") as f:
             data = json.load(f)
         print(data.keys())
-        print(len(data['images']),len(data['annotations']))
-        for num in range(0,len(data['annotations'])):
+        print(len(data["images"]), len(data["annotations"]))
+        for num in range(0, len(data["annotations"])):
             # file_name = data['images'][num]['file_name']
             # data['images'][num]['file_name'] = os.path.basename(file_name)
             # width = data['images'][num]['width']
@@ -49,7 +50,7 @@ for dataset in datasets:
             # data['images'][num]['height'] = h_res
 
             # modify anns
-            keypoints = data['annotations'][num]['keypoints']
+            keypoints = data["annotations"][num]["keypoints"]
             # data['annotations'][num * 3 + i]['id'] = num * 3 + i
             x = [keypoint for keypoint in keypoints[::3] if keypoint > 0.0]
             y = [keypoint for keypoint in keypoints[1::3] if keypoint > 0.0]
@@ -58,9 +59,9 @@ for dataset in datasets:
             ymin = min(y) if y else 0.0
             ymax = max(y) if y else 0.0
 
-            data['annotations'][num]['bbox'] = [xmin, ymin, xmax-xmin, ymax-ymin]
-            data['annotations'][num]['area'] = (xmax - xmin) * (ymax - ymin)
+            data["annotations"][num]["bbox"] = [xmin, ymin, xmax - xmin, ymax - ymin]
+            data["annotations"][num]["area"] = (xmax - xmin) * (ymax - ymin)
 
-        file = open(path + ann + '.json',mode='w')
+        file = open(path + ann + ".json", mode="w")
         json.dump(data, file, indent=4)
         file.close()
