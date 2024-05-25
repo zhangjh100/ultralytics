@@ -158,7 +158,7 @@ nav:
           - datasets/index.md
       - Guides:
           - guides/index.md
-      - New 🚀 Parking Management: guides/parking-management.md
+      - New 🚀 Analytics: guides/analytics.md
       - Explorer:
           - datasets/explorer/index.md
       - Languages:
@@ -206,6 +206,7 @@ nav:
       - YOLOv7: models/yolov7.md
       - YOLOv8: models/yolov8.md
       - YOLOv9: models/yolov9.md
+      - YOLOv10: models/yolov10.md
       - SAM (Segment Anything Model): models/sam.md
       - MobileSAM (Mobile Segment Anything Model): models/mobile-sam.md
       - FastSAM (Fast Segment Anything Model): models/fast-sam.md
@@ -235,6 +236,7 @@ nav:
           - Roboflow 100: datasets/detect/roboflow-100.md
           - Brain-tumor: datasets/detect/brain-tumor.md
           - African-wildlife: datasets/detect/african-wildlife.md
+          - Signature: datasets/detect/signature.md
       - Segmentation:
           - datasets/segment/index.md
           - COCO: datasets/segment/coco.md
@@ -290,6 +292,7 @@ nav:
       - Viewing Inference Images in a Terminal: guides/view-results-in-terminal.md
       - OpenVINO Latency vs Throughput modes: guides/optimizing-openvino-latency-vs-throughput-modes.md
       - Real-World Projects:
+          - NEW 🚀 Analytics: guides/analytics.md
           - Object Counting: guides/object-counting.md
           - Object Cropping: guides/object-cropping.md
           - Object Blurring: guides/object-blurring.md
