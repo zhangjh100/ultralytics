@@ -1,0 +1,9 @@
+path: cofw
+train: images/train
+val: images/val
+
+kpt_shape: [29,3]
+flip_idx: []
+
+names:
+  0: face

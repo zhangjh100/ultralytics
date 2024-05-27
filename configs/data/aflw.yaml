@@ -1,0 +1,10 @@
+path: aflw
+train: images/train
+test: images/test
+val: images/val
+
+kpt_shape: [19,3]
+flip_idx: [ 16, 12, 5, 4, 3, 2, 1, 0, 15, 14, 13, 11, 10, 9, 8, 7, 6, 18, 17 ]
+
+names:
+  0: face
