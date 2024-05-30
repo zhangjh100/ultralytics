@@ -3,7 +3,7 @@ train: images/train
 val: images/val
 
 kpt_shape: [29,3]
-flip_idx: []
+flip_idx: [0, 4, 2, 3, 6, 1, 8, 10, 11, 9, 18, 20, 19, 21, 22, 22, 24, 25, 26, 27, 28]
 
 names:
   0: face
