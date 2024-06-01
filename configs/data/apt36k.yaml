@@ -1,42 +1,42 @@
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
-path: apt36k  # dataset root dir
-train: images/train  # train images (relative to 'path') 4 images
-val: images/val  
-test: images/test 
+path: apt36k # dataset root dir
+train: images/train # train images (relative to 'path') 4 images
+val: images/val
+test: images/test
 
 # Keypoints
-kpt_shape: [17, 3]  # number of keypoints, number of dims (2 for x,y or 3 for x,y,visible)
+kpt_shape: [17, 3] # number of keypoints, number of dims (2 for x,y or 3 for x,y,visible)
 flip_idx: [1, 0, 2, 3, 4, 8, 9, 10, 5, 6, 7, 14, 15, 16, 11, 12, 13]
 
 # Classes
 names:
- 0: gorilla
- 1: spider-monkey
- 2: howling-monkey
- 3: zebra
- 4: elephant
- 5: hippo
- 6: raccon
- 7: rhino
- 8: giraffe
- 9: tiger
- 10: deer
- 11: lion
- 12: panda
- 13: cheetah
- 14: black-bear
- 15: polar-bear
- 16: antelope
- 17: fox
- 18: buffalo
- 19: cow
- 20: wolf
- 21: dog
- 22: sheep
- 23: cat
- 24: hourse
- 25: rabbit
- 26: pig
- 27: chimpanzee
- 28: monkey
- 29: orangutan
+  0: gorilla
+  1: spider-monkey
+  2: howling-monkey
+  3: zebra
+  4: elephant
+  5: hippo
+  6: raccon
+  7: rhino
+  8: giraffe
+  9: tiger
+  10: deer
+  11: lion
+  12: panda
+  13: cheetah
+  14: black-bear
+  15: polar-bear
+  16: antelope
+  17: fox
+  18: buffalo
+  19: cow
+  20: wolf
+  21: dog
+  22: sheep
+  23: cat
+  24: hourse
+  25: rabbit
+  26: pig
+  27: chimpanzee
+  28: monkey
+  29: orangutan
