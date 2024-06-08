@@ -147,7 +147,7 @@ fi
 for model_yaml in "${models[@]}"; do
     
     model_name="${dataset}-${model_yaml%.yaml}"
-    output_dir="./runs/pose/$dataset"
+    output_dir="./runs/pose/model_name/$dataset"
     model=$output_dir/weights/best.pt
 
     # Launch YOLOv8 pose evaluation command
@@ -169,5 +169,5 @@ for model_yaml in "${models[@]}"; do
         dnn=$dnn \
         plots=$plots \
         rect=$rect \
-        split=$split \
+        split=$split
 done
