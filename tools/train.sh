@@ -114,7 +114,7 @@ for model_yaml in "${models[@]}"; do
     fi
     
     model_name="${dataset}-${model_yaml%.yaml}"
-    output_dir="./runs/pose/$dataset"
+    output_dir="./runs/pose/train/$dataset"
 
     # Launch YOLOv8 pose training command
     echo "Training $model_yaml on $dataset..."
