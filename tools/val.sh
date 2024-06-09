@@ -83,12 +83,15 @@ while [[ $# -gt 1 ]]; do
             ;;
         --dnn)
             dnn=True
+            shift
             ;;
         --plots)
             plots=True
+            shift
             ;;
         --rect)
             rect=True
+            shift
             ;;
         --split)
             split="$2"
