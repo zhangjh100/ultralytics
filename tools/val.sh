@@ -147,8 +147,9 @@ fi
 for model_yaml in "${models[@]}"; do
     
     model_name="${dataset}-${model_yaml%.yaml}"
-    output_dir="./runs/pose/eval/$dataset/$model_name"
-    model=$output_dir/weights/best.pt
+    model_dir="./runs/pose/$dataset/$model_name"
+    model=$model_dir/weights/best.pt
+    output_dir="./runs/pose/evaluation/$dataset/$model_name"
 
     # Launch YOLOv8 pose evaluation command
     echo "Evaluating  $model_yaml on $dataset..."
