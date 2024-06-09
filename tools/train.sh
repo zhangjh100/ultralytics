@@ -98,7 +98,7 @@ fi
 
 # Loop through each model for the given dataset
 for model_yaml in "${models[@]}"; do
-    if pretrained; then
+    if $pretrained; then
         # If pretrained is set, use the default pretrained model for the dataset
         pretrained_model="${model_yaml%.yaml}.pt"
         # Ensure the pretrained model exists before attempting to train
