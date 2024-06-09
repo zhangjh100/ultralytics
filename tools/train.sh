@@ -26,27 +26,27 @@ while [[ $# -gt 1 ]]; do
     case $key in
         --dataset)
             dataset="$2"
-            shift
+            shift 2
             ;;
         --epochs)
             epochs="$2"
-            shift
+            shift 2
             ;;
         --batch)
             batch_size="$2"
-            shift
+            shift 2
             ;;
         --imgsz)
             imgsz="$2"
-            shift
+            shift 2
             ;;
         --device)
             device="$2"
-            shift
+            shift 2
             ;;
         --models)
             IFS=',' read -ra selected_models <<< "$2"
-            shift
+            shift 2
             ;;
         --no-pretrained)
             pretrained=False
@@ -57,7 +57,6 @@ while [[ $# -gt 1 ]]; do
             exit 1
             ;;
     esac
-    shift
 done
 
 # Set models based on selection

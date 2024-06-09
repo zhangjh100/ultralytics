@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Script: Train YOLOv8 models on a specified dataset with default or user-provided settings.
-# Usage: bash tools/val.sh \
+# Usage: bash tools/val.sh \ 
 # --dataset <datase_name> \
 # --imgsz <image_size> \
 # --batch <batch_size> \
@@ -34,47 +34,48 @@ rect=False
 split=test
 
 # Parse optional arguments
-while true; do
+while [ "$#" -gt 0 ]; do
     key="$1"
     case $key in
         --dataset)
             dataset="$2"
-            shift # past argument
+            shift 2
             ;;
         --imgsz)
             imgsz="$2"
-            shift # past argument
+            shift 2
             ;;
         --batch)
             batch="$2"
-            shift # past argument
+            shift 2
             ;;
-        --save_json)
+        --save-json)
             save_json=True
             shift
             ;;
-        --save_hybrid)
+        --save-hybrid)
             save_hybrid=True
             shift
             ;;
         --conf)
             conf="$2"
-            shift # past argument
+            shift 2
             ;;
         --iou)
             iou="$2"
-            shift # past argument
+            shift 2
             ;;
         --max_det)
             max_det="$2"
-            shift # past argument
+            shift 2
             ;;
         --half)
             half=True
+            shift
             ;;
         --device)
             device="$2"
-            shift # past argument
+            shift 2
             ;;
         --dnn)
             dnn=True
@@ -86,22 +87,21 @@ while true; do
             ;;
         --rect)
             rect=True
-            shift
+            shift 2
             ;;
         --split)
             split="$2"
-            shift
+            shift 2
             ;;
         --models)
-            IFS=',' read -ra selected_models <<< "${2//, /,}"
-            shift
+            IFS=',' read -ra selected_models <<< "$2"
+            shift 2
             ;;
         *)  # unknown option
             echo "Unknown option: $1"
             exit 1
             ;;
     esac
-    shift
 done
 
 # Set models based on selection
@@ -152,7 +152,7 @@ for model_yaml in "${models[@]}"; do
     # Launch YOLOv8 pose evaluation command
     echo "Evaluating  $model_yaml on $dataset..."
     yolo pose val \
-        model="$model" \
+        model=$model \
         data=./configs/data/"$dataset".yaml \
         imgsz=$imgsz \
         batch=$batch \
