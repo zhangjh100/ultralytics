@@ -101,7 +101,6 @@ while true; do
             exit 1
             ;;
     esac
-    shift
 done
 
 # Set models based on selection
