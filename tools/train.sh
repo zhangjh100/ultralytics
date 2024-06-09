@@ -10,12 +10,13 @@ epochs=1000
 batch_size=-1
 imgsz=640
 device=None
-cos_lr=true
-resume=true
+cos_lr=True
+resume=True
+pretrained=True
 
 # Ensure a dataset name is provided
 if [ "$#" -lt 1 ]; then
-    echo "Usage: $0 [--dataset <dataset_name>] [--epochs <num_epochs>] [--batch <batch_size>] [--imgsz <image_size>] [--device <device>] [--models <model_list>]"
+    echo "Usage: $0 [--dataset <dataset_name>] [--epochs <num_epochs>] [--batch <batch_size>] [--imgsz <image_size>] [--device <device>] [--models <model_list>] [--no-pretrained]"
     exit 1
 fi
 
@@ -45,6 +46,10 @@ while [[ $# -gt 1 ]]; do
             ;;
         --models)
             IFS=',' read -ra selected_models <<< "$2"
+            shift
+            ;;
+        --no-pretrained)
+            pretrained=False
             shift
             ;;
         *)  # unknown option
@@ -94,16 +99,22 @@ fi
 
 # Loop through each model for the given dataset
 for model_yaml in "${models[@]}"; do
-    pretrained_model="${model_yaml%.yaml}.pt"
+    if pretrained; then
+        # If pretrained is set, use the default pretrained model for the dataset
+        pretrained_model="${model_yaml%.yaml}.pt"
+        # Ensure the pretrained model exists before attempting to train
+        if [ ! -f "./weights/$pretrained_model" ]; then
+            echo "Pretrained model $pretrained_model not found. Skipping..."
+            pretrained_model=False
+            continue
+        fi
+    else
+        # If pretrained is not set, use the default model for the dataset
+        pretrained_model=False
+    fi
+    
     model_name="${dataset}-${model_yaml%.yaml}"
     output_dir="./runs/pose/$dataset"
-
-    # Ensure the pretrained model exists before attempting to train
-    if [ ! -f "./weights/$pretrained_model" ]; then
-        echo "Pretrained model $pretrained_model not found. Skipping..."
-        pretrained_model=None
-        continue
-    fi
 
     # Launch YOLOv8 pose training command
     echo "Training $model_yaml on $dataset..."

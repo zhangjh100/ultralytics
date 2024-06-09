@@ -27,7 +27,7 @@ save_hybrid=False
 conf=0.001
 iou=0.6
 max_det=300
-half=True
+half=False
 device=None
 dnn=False
 plots=False
@@ -147,7 +147,7 @@ fi
 for model_yaml in "${models[@]}"; do
     
     model_name="${dataset}-${model_yaml%.yaml}"
-    output_dir="./runs/pose/model_name/$dataset"
+    output_dir="./runs/pose/eval/$dataset/$model_name"
     model=$output_dir/weights/best.pt
 
     # Launch YOLOv8 pose evaluation command
