@@ -95,7 +95,7 @@ while [[ $# -gt 1 ]]; do
             shift
             ;;
         --models)
-            IFS=',' read -r -a selected_models <<< "$2"
+            IFS=',' read -ra selected_models <<< "$2"
             shift
             ;;
         *)  # unknown option
