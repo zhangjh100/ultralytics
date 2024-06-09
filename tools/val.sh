@@ -21,7 +21,6 @@
 dataset=ap10k
 imgsz=640
 batch=16
-device=None
 save_json=False
 save_hybrid=False
 conf=0.001
@@ -34,14 +33,8 @@ plots=False
 rect=False
 split=test
 
-# Ensure a dataset name is provided
-if [ "$#" -lt 1 ]; then
-    echo "Usage: $0 [--dataset <datase_name> --imgsz <image_size> --batch <batch_size> --save_json --save_hybrid --conf <conf_thresh> --iou <iou_thresh> --max_det <max_detections> --half --device <device> --dnn --plots --rect --split <split_name> --models <model_codes>]"
-    exit 1
-fi
-
 # Parse optional arguments
-while [[ $# -gt 1 ]]; do
+while true; do
     key="$1"
     case $key in
         --dataset)
@@ -58,9 +51,11 @@ while [[ $# -gt 1 ]]; do
             ;;
         --save_json)
             save_json=True
+            shift
             ;;
         --save_hybrid)
             save_hybrid=True
+            shift
             ;;
         --conf)
             conf="$2"
