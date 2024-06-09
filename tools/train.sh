@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Script: Train YOLOv8 models on a specified dataset with default or user-provided settings.
 # Usage: bash tools/train.sh --dataset <dataset_name> 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Script: Train YOLOv8 models on a specified dataset with default or user-provided settings.
 # Usage: bash tools/val.sh \ 
@@ -101,6 +101,7 @@ while true; do
             exit 1
             ;;
     esac
+    shift
 done
 
 # Set models based on selection
