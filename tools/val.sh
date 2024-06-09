@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Script: Train YOLOv8 models on a specified dataset with default or user-provided settings.
-# Usage: bash tools/val.sh \ 
+# Usage: bash tools/val.sh \
 # --dataset <datase_name> \
 # --imgsz <image_size> \
 # --batch <batch_size> \
@@ -93,7 +93,7 @@ while true; do
             shift
             ;;
         --models)
-            IFS=',' read -ra selected_models <<< "$2"
+            IFS=',' read -ra selected_models <<< "${2//, /,}"
             shift
             ;;
         *)  # unknown option
@@ -152,7 +152,7 @@ for model_yaml in "${models[@]}"; do
     # Launch YOLOv8 pose evaluation command
     echo "Evaluating  $model_yaml on $dataset..."
     yolo pose val \
-        model=$model \
+        model="$model" \
         data=./configs/data/"$dataset".yaml \
         imgsz=$imgsz \
         batch=$batch \
