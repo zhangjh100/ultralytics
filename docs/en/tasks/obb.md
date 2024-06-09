@@ -1,7 +1,7 @@
 ---
 comments: true
-description: Learn how to use oriented object detection models with Ultralytics YOLO. Instructions on training, validation, image prediction, and model export.
-keywords: yolov8, oriented object detection, Ultralytics, DOTA dataset, rotated object detection, object detection, model training, model validation, image prediction, model export
+description: Discover how to detect objects with rotation for higher precision using YOLOv8 OBB models. Learn, train, validate, and export OBB models effortlessly.
+keywords: Oriented Bounding Boxes, OBB, Object Detection, YOLOv8, Ultralytics, DOTAv1, Model Training, Model Export, AI, Machine Learning
 ---
 
 # Oriented Bounding Boxes Object Detection
@@ -195,7 +195,7 @@ Available YOLOv8-obb export formats are in the table below. You can export to an
 | [TF SavedModel](../integrations/tf-savedmodel.md) | `saved_model`     | `yolov8n-obb_saved_model/`    | ✅        | `imgsz`, `keras`, `int8`, `batch`                                    |
 | [TF GraphDef](../integrations/tf-graphdef.md)     | `pb`              | `yolov8n-obb.pb`              | ❌        | `imgsz`, `batch`                                                     |
 | [TF Lite](../integrations/tflite.md)              | `tflite`          | `yolov8n-obb.tflite`          | ✅        | `imgsz`, `half`, `int8`, `batch`                                     |
-| [TF Edge TPU](../integrations/edge-tpu.md)        | `edgetpu`         | `yolov8n-obb_edgetpu.tflite`  | ✅        | `imgsz`, `batch`                                                     |
+| [TF Edge TPU](../integrations/edge-tpu.md)        | `edgetpu`         | `yolov8n-obb_edgetpu.tflite`  | ✅        | `imgsz`                                                              |
 | [TF.js](../integrations/tfjs.md)                  | `tfjs`            | `yolov8n-obb_web_model/`      | ✅        | `imgsz`, `half`, `int8`, `batch`                                     |
 | [PaddlePaddle](../integrations/paddlepaddle.md)   | `paddle`          | `yolov8n-obb_paddle_model/`   | ✅        | `imgsz`, `batch`                                                     |
 | [NCNN](../integrations/ncnn.md)                   | `ncnn`            | `yolov8n-obb_ncnn_model/`     | ✅        | `imgsz`, `half`, `batch`                                             |

@@ -1,7 +1,7 @@
 ---
 comments: true
-description: Learn about YOLOv8 Classify models for image classification. Get detailed information on List of Pretrained Models & how to Train, Validate, Predict & Export models.
-keywords: Ultralytics, YOLOv8, Image Classification, Pretrained Models, YOLOv8n-cls, Training, Validation, Prediction, Model Export
+description: Master image classification using YOLOv8. Learn to train, validate, predict, and export models efficiently.
+keywords: YOLOv8, image classification, AI, machine learning, pretrained models, ImageNet, model export, predict, train, validate
 ---
 
 # Image Classification
@@ -173,7 +173,7 @@ Available YOLOv8-cls export formats are in the table below. You can export to an
 | [TF SavedModel](../integrations/tf-savedmodel.md) | `saved_model`     | `yolov8n-cls_saved_model/`    | ✅        | `imgsz`, `keras`, `int8`, `batch`                                    |
 | [TF GraphDef](../integrations/tf-graphdef.md)     | `pb`              | `yolov8n-cls.pb`              | ❌        | `imgsz`, `batch`                                                     |
 | [TF Lite](../integrations/tflite.md)              | `tflite`          | `yolov8n-cls.tflite`          | ✅        | `imgsz`, `half`, `int8`, `batch`                                     |
-| [TF Edge TPU](../integrations/edge-tpu.md)        | `edgetpu`         | `yolov8n-cls_edgetpu.tflite`  | ✅        | `imgsz`, `batch`                                                     |
+| [TF Edge TPU](../integrations/edge-tpu.md)        | `edgetpu`         | `yolov8n-cls_edgetpu.tflite`  | ✅        | `imgsz`                                                              |
 | [TF.js](../integrations/tfjs.md)                  | `tfjs`            | `yolov8n-cls_web_model/`      | ✅        | `imgsz`, `half`, `int8`, `batch`                                     |
 | [PaddlePaddle](../integrations/paddlepaddle.md)   | `paddle`          | `yolov8n-cls_paddle_model/`   | ✅        | `imgsz`, `batch`                                                     |
 | [NCNN](../integrations/ncnn.md)                   | `ncnn`            | `yolov8n-cls_ncnn_model/`     | ✅        | `imgsz`, `half`, `batch`                                             |
